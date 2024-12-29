@@ -1,0 +1,57 @@
+/* تنسيق القوائم ليكون متجاوبًا */
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* السماح بتكديس العناصر عند صغر الشاشة */
+    justify-content: center; /* توسيط العناصر في الشاشات الصغيرة */
+    gap: 15px;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline; /* عرض العناصر بشكل أفقي في الشاشات الكبيرة */
+}
+
+/* تصميم متجاوب باستخدام وسائل الإعلام */
+@media (max-width: 768px) { /* إذا كان عرض الشاشة أقل من 768px */
+    header {
+        flex-direction: column; /* جعل العناصر عمودية */
+        align-items: center; /* توسيط العناصر */
+    }
+
+    header nav ul {
+        flex-direction: column; /* عرض القائمة بشكل عمودي */
+        gap: 10px; /* تقليل التباعد بين العناصر */
+    }
+
+    #home {
+        padding: 30px 10px; /* ضبط التباعد الداخلي */
+    }
+
+    #home h1 {
+        font-size: 2em; /* تقليل حجم العنوان */
+    }
+
+    #home p {
+        font-size: 1em; /* تقليل حجم النص */
+    }
+}
+
+/* وسائل إعلام لأجهزة أصغر */
+@media (max-width: 480px) { /* إذا كان عرض الشاشة أقل من 480px */
+    header nav ul {
+        gap: 5px; /* تقليل التباعد بين عناصر القائمة */
+    }
+
+    #home h1 {
+        font-size: 1.8em; /* حجم أصغر للعنوان */
+    }
+
+    #home p {
+        font-size: 0.9em; /* حجم أصغر للنص */
+    }
+
+    #home .btn {
+        padding: 8px 15px; /* تصغير الزر */
+    }
+}
